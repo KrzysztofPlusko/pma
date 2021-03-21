@@ -1,10 +1,11 @@
 package pl.krzysiek.spring.pma.entities;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
+@Entity
 public class Project {
 
     @Id
@@ -12,14 +13,14 @@ public class Project {
     private long projectId;
     private String name;
     private String stage;
-    private String decription;
+    private String description;
 
     public Project() {}
 
     public Project(String name, String stage, String decription) {
         this.name = name;
         this.stage = stage;
-        this.decription = decription;
+        this.description = decription;
     }
 
     public long getProjectId() {
@@ -46,11 +47,11 @@ public class Project {
         this.stage = stage;
     }
 
-    public String getDecription() {
-        return decription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDecription(String decription) {
-        this.decription = decription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
