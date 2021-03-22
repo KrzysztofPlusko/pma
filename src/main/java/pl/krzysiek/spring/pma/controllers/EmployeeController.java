@@ -23,7 +23,7 @@ public class EmployeeController {
         List<Employee> employees = empRepo.findAll();
         model.addAttribute("employees", employees);
 
-        return "list-employees";
+        return "employees/list-employees";
     }
 
     @GetMapping("/new")

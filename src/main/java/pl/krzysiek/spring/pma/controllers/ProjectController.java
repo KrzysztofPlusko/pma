@@ -22,7 +22,7 @@ public class ProjectController {
     public String displayProjects(Model model) {
         List<Project> projects = proRepo.findAll();
         model.addAttribute("projects", projects);
-        return "list-projects";
+        return "projects/list-projects";
     }
 
     @GetMapping("/new")
