@@ -1,9 +1,6 @@
 package pl.krzysiek.spring.pma.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Employee {
@@ -14,6 +11,10 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String email;
+
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinColumn(name ="project_id")
+    private Project theProject;
 
     public Employee() {}
 
